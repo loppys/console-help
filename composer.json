@@ -1,0 +1,13 @@
+{
+  "name": "vengine-libs/console",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Vengine\\Libraries\\Console\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=8.0"
+  },
+  "minimum-stability": "dev"
+}
