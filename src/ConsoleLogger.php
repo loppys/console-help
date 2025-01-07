@@ -6,6 +6,10 @@ class ConsoleLogger
 {
     public static function mixedMessage(string $message, array $dataArray = []): void
     {
+        if (php_sapi_name() !== 'cli') {
+            return;
+        }
+        
         $time = date('d.m.Y H:i:s');
 
         if (!empty($dataArray)) {
@@ -18,6 +22,10 @@ class ConsoleLogger
 
     public static function showMessage(string|array $message = ''): void
     {
+        if (php_sapi_name() !== 'cli') {
+            return;
+        }
+        
         if (is_array($message)) {
             $message = json_encode($message);
         }
